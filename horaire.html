@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Emploi du temps · 4è · Journal de classe — Saint-Vincent</title>
+<style>
+:root{--bg:#f5f7fb;--surface:#fff;--ink:#172033;--muted:#667085;--line:#e6eaf1;--blue:#315efb;--blue2:#173aaf;--soft:#eef2ff;--green:#0b8f68;--shadow:0 12px 35px #17203312}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input,textarea,select{font:inherit}.top{background:linear-gradient(135deg,#132754,#315efb);color:#fff}.topin{max-width:1180px;margin:auto;padding:24px 18px 28px;display:flex;justify-content:space-between;align-items:center;gap:18px}.brand{display:flex;gap:13px;align-items:center}.mark{width:52px;height:52px;border-radius:16px;background:#ffffff1c;display:grid;place-items:center;font-size:27px}.eyebrow{font-size:12px;opacity:.78;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.title{font-size:clamp(24px,4vw,36px);font-weight:900;margin:2px 0}.sub{opacity:.85}.wrap{max-width:1180px;margin:22px auto;padding:0 18px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}.btn,.link{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:11px;padding:10px 13px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px}.btn:hover,.link:hover{border-color:#bcc7df;transform:translateY(-1px)}.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}.primary{background:var(--blue);border-color:var(--blue);color:#fff}.primary:hover{background:var(--blue2);border-color:var(--blue2)}.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:var(--shadow);margin-bottom:18px}.dateRow{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.date{font-size:27px;font-weight:900}.muted{color:var(--muted)}.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap}.h2{font-size:20px;margin:0 0 4px}.schedule{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.dayCol{border:1px solid var(--line);border-radius:13px;overflow:hidden}.dayName{background:#f4f6fb;text-align:center;font-weight:850;padding:10px}.slot{padding:9px 10px;border-top:1px solid var(--line)}.slot b{display:block}.slot span{font-size:12px;color:var(--muted)}.footer{text-align:center;color:var(--muted);padding:8px 18px 35px;font-size:13px}@media(max-width:850px){.schedule{grid-template-columns:1fr 1fr}}@media(max-width:560px){.schedule{grid-template-columns:1fr}.card{padding:14px}.date{font-size:22px}}
+
+/* Menu hamburger */
+.hamburger{width:46px;height:46px;border:1px solid #ffffff33;background:#ffffff18;color:#fff;border-radius:13px;display:grid;place-items:center;cursor:pointer;font-size:25px;line-height:1;flex:none}
+.hamburger span,.hamburger span:before,.hamburger span:after{display:block;width:21px;height:2px;background:#fff;border-radius:2px;content:"";position:relative}
+.hamburger span:before{position:absolute;top:-7px}
+.hamburger span:after{position:absolute;top:7px}
+.menuOverlay{position:fixed;inset:0;background:#17203366;display:none;z-index:2000;backdrop-filter:blur(2px)}
+.menuOverlay.open{display:block}
+.sideMenu{position:absolute;left:0;top:0;bottom:0;width:min(330px,88vw);background:#fff;box-shadow:20px 0 60px #0003;padding:22px 18px;transform:translateX(-105%);transition:transform .25s ease;overflow:auto}
+.menuOverlay.open .sideMenu{transform:translateX(0)}
+.menuTop{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.menuTitle{font-size:20px;font-weight:900}
+.menuClose{border:0;background:#f1f3f7;width:40px;height:40px;border-radius:11px;cursor:pointer;font-size:22px}
+.menuItem{display:flex;align-items:center;gap:12px;width:100%;border:1px solid var(--line);background:#fff;color:var(--ink);padding:14px;border-radius:13px;margin:9px 0;text-decoration:none;font-weight:800;cursor:pointer;text-align:left}
+.menuItem:hover{background:#f5f7ff;border-color:#c9d3f2}
+.menuIcon{font-size:21px;width:28px;text-align:center}
+.menuNote{font-size:12px;color:var(--muted);margin:18px 4px}
+@media(max-width:560px){.hamburger{width:44px;height:44px}.sideMenu{width:88vw}}
+</style></head>
+<body>
+<header class="top"><div class="topin"><button class="hamburger" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button><div class="brand"><div class="mark">📚</div><div><div class="eyebrow">CES Saint-Vincent · Soignies</div><div class="title">4è — Journal de classe</div><div class="sub">Un espace commun à toute la classe</div></div></div><div>🏫</div></div></header>
+<div class="menuOverlay" id="menuOverlay" aria-hidden="true">
+  <aside class="sideMenu" aria-label="Menu principal">
+    <div class="menuTop">
+      <div class="menuTitle">☰ Menu</div>
+      <button class="menuClose" id="menuClose" aria-label="Fermer le menu">×</button>
+    </div>
+    <a class="menuItem" href="index.html"><span class="menuIcon">📖</span><span>Journal de classe</span></a>
+    <a class="menuItem" href="horaire.html"><span class="menuIcon">🗓️</span><span>Emploi du temps</span></a>
+    <a class="menuItem" href="index.html#newsSection"><span class="menuIcon">📰</span><span>News du collège</span></a>
+    <a class="menuItem" href="index.html#accountSection"><span class="menuIcon">👤</span><span>Mon compte</span></a>
+    <button class="menuItem" id="menuLeaveClass"><span class="menuIcon">🚪</span><span>Quitter la classe</span></button>
+    <div class="menuNote">Les rubriques s'ouvrent directement dans la page.</div>
+  </aside>
+</div>
+
+<main class="wrap">
+<section class="card"><div class="sectionHead"><div><h2 class="h2">🗓️ Emploi du temps</h2><div class="muted">Structure provisoire à compléter à la rentrée.</div></div></div><div class="schedule" id="schedule"></div></section>
+</main>
+<div class="footer">V3.9 · Journal de classe · CES Saint-Vincent de Soignies<br><small>Ceci est un site entièrement indépendant du CES</small></div>
+
+<script>
+const VALID_CLASSES=['5AZ7XQ','6BUXWD','6S8A86','9UERJR','BVCGV3','EXVHW3','FW3CGA','J2HRZD','MC55D8','N5ZNNN','NRBYVF','Q3DWPP','QKQUN8','R39TZZ','S5S8JK','UATG8Q','W2QVVQ','XYJ5QP','YMHN7U','ZQXWFE'];
+const CLASS_LABELS={'5AZ7XQ':'4A','6BUXWD':'4B','6S8A86':'4C','9UERJR':'4D','BVCGV3':'4E','EXVHW3':'4F','FW3CGA':'4G','J2HRZD':'4H','MC55D8':'4I','N5ZNNN':'4J','NRBYVF':'4K','Q3DWPP':'4L','QKQUN8':'4M','R39TZZ':'4N','S5S8JK':'4O','UATG8Q':'4P','W2QVVQ':'4Q','XYJ5QP':'4R','YMHN7U':'4S','ZQXWFE':'4T'};
+function getClassId(){
+  const params=new URLSearchParams(location.search);
+  let c=params.get('classe');
+  if(c)c=c.trim().toUpperCase();
+  if(c&&!VALID_CLASSES.includes(c))c=null;
+  if(!c){
+    let stored=localStorage.getItem('jc_classe');
+    if(stored&&VALID_CLASSES.includes(stored))c=stored;
+  }
+  while(!c){
+    let entered=prompt("Code de la classe — demande-le à ton professeur :");
+    if(entered){
+      entered=entered.trim().toUpperCase();
+      if(VALID_CLASSES.includes(entered))c=entered;
+      else alert("Ce code de classe n'existe pas. Vérifie l'orthographe et réessaie.");
+    }
+  }
+  localStorage.setItem('jc_classe',c);
+  return c;
+}
+const CLASS_ID=getClassId();
+const CLASS_LABEL=CLASS_LABELS[CLASS_ID]||CLASS_ID;
+document.title='Emploi du temps · '+CLASS_LABEL+' · Journal de classe — Saint-Vincent';
+document.querySelectorAll('a[href^="index.html"]').forEach(a=>{
+  a.href=a.getAttribute('href').replace('index.html','index.html?classe='+encodeURIComponent(CLASS_ID));
+});
+document.querySelectorAll('a[href="horaire.html"]').forEach(a=>{a.href='horaire.html?classe='+encodeURIComponent(CLASS_ID);});
+
+function schedule(){
+  let names=['Lundi','Mardi','Mercredi','Jeudi','Vendredi'];
+  let box=document.getElementById('schedule');box.innerHTML='';
+  names.forEach(n=>{
+    let c=document.createElement('div');c.className='dayCol';
+    c.innerHTML='<div class="dayName">'+n+'</div>';
+    for(let i=1;i<=9;i++)c.innerHTML+=`<div class="slot"><b>Cours ${i}</b><span>À compléter</span></div>`;
+    box.appendChild(c)
+  })
+}
+schedule();
+
+const menuOverlay=document.getElementById('menuOverlay');
+const menuBtn=document.getElementById('menuBtn');
+const menuClose=document.getElementById('menuClose');
+function openMenu(){menuOverlay.classList.add('open');menuOverlay.setAttribute('aria-hidden','false');menuBtn.setAttribute('aria-expanded','true')}
+function closeMenu(){menuOverlay.classList.remove('open');menuOverlay.setAttribute('aria-hidden','true');menuBtn.setAttribute('aria-expanded','false')}
+menuBtn.addEventListener('click',openMenu);
+menuClose.addEventListener('click',closeMenu);
+menuOverlay.addEventListener('click',e=>{if(e.target===menuOverlay)closeMenu()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+document.getElementById('menuLeaveClass').addEventListener('click',()=>{
+  if(!confirm('Quitter cette classe ? Il faudra entrer un nouveau code pour en rejoindre une autre.'))return;
+  localStorage.removeItem('jc_classe');
+  location.href='index.html';
+});
+</script>
+</body></html>
