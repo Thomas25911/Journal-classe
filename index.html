@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7816141964451020" crossorigin="anonymous"></script>
+
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title id="pageTitleTag">4è · Journal de classe — Saint-Vincent</title>
+<style>
+:root{--bg:#f5f7fb;--surface:#fff;--ink:#172033;--muted:#667085;--line:#e6eaf1;--blue:#315efb;--blue2:#173aaf;--soft:#eef2ff;--green:#0b8f68;--shadow:0 12px 35px #17203312}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input,textarea,select{font:inherit}.top{background:linear-gradient(135deg,#132754,#315efb);color:#fff}.topin{max-width:1180px;margin:auto;padding:24px 18px 28px;display:flex;justify-content:space-between;align-items:center;gap:18px}.brand{display:flex;gap:13px;align-items:center}.mark{width:52px;height:52px;border-radius:16px;background:#ffffff1c;display:grid;place-items:center;font-size:27px}.eyebrow{font-size:12px;opacity:.78;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.title{font-size:clamp(24px,4vw,36px);font-weight:900;margin:2px 0}.sub{opacity:.85}.wrap{max-width:1180px;margin:22px auto;padding:0 18px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}.btn,.link{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:11px;padding:10px 13px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px}.btn:hover,.link:hover{border-color:#bcc7df;transform:translateY(-1px)}.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}.primary{background:var(--blue);border-color:var(--blue);color:#fff}.primary:hover{background:var(--blue2);border-color:var(--blue2)}.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:var(--shadow);margin-bottom:18px}.dateRow{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.date{font-size:27px;font-weight:900}.muted{color:var(--muted)}.calendarWrap{position:relative}.calendar{position:absolute;z-index:10;display:none;top:50px;left:0;width:335px;max-width:90vw;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:0 25px 60px #0002}.calendar.open{display:block}.calHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.calGrid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.dow{text-align:center;color:var(--muted);font-size:12px;font-weight:800;padding:4px}.day{border:0;background:#f5f7fb;border-radius:9px;padding:8px 0;cursor:pointer;font-weight:700}.day:hover{background:#e5eaff}.day.selected{background:var(--blue);color:#fff}.day.today{outline:2px solid #aab8ff;outline-offset:-2px}.empty{visibility:hidden}.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap}.h2{font-size:20px;margin:0 0 4px}.tableWrap{overflow:auto}.journal{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}.journal th,.journal td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}.journal th{background:#f4f6fb;text-align:left;font-size:13px}.journal tr:last-child td{border-bottom:0}.num{width:82px;font-weight:850;white-space:nowrap}.edit{min-height:44px;padding:7px;border-radius:8px;outline:none}.edit:focus{background:#f5f7ff;box-shadow:inset 0 0 0 2px #c7d1ff}.edit[contenteditable=false]{opacity:.6;cursor:not-allowed}.status{color:var(--green);font-weight:750;font-size:13px;margin-top:9px;min-height:20px}.schedule{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.dayCol{border:1px solid var(--line);border-radius:13px;overflow:hidden}.dayName{background:#f4f6fb;text-align:center;font-weight:850;padding:10px}.slot{padding:9px 10px;border-top:1px solid var(--line)}.slot b{display:block}.slot span{font-size:12px;color:var(--muted)}.news{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.news a{color:inherit;text-decoration:none;border:1px solid var(--line);border-radius:14px;padding:14px}.news a:hover{border-color:#b9c5e4;box-shadow:var(--shadow)}.news small{display:block;color:var(--muted);margin-top:5px}.links{display:flex;flex-wrap:wrap;gap:9px}.footer{text-align:center;color:var(--muted);padding:8px 18px 35px;font-size:13px}
+.studentsGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:16px}
+.studentCard{display:flex;flex-direction:column;align-items:center;text-align:center;gap:7px}
+.studentPhoto{width:64px;height:64px;border-radius:50%;object-fit:cover;background:#eef2ff;border:1px solid var(--line)}
+.studentPhotoPh{width:64px;height:64px;border-radius:50%;background:#eef2ff;display:flex;align-items:center;justify-content:center;font-size:26px;border:1px solid var(--line)}
+.studentName{font-weight:750;font-size:13px;line-height:1.25}
+.myPhotoRow{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.myPhoto,.myPhotoPh{width:48px;height:48px;border-radius:50%;object-fit:cover;background:#eef2ff;border:1px solid var(--line);flex:none}
+.myPhotoPh{display:flex;align-items:center;justify-content:center;font-size:20px}@media(max-width:850px){.schedule{grid-template-columns:1fr 1fr}.news{grid-template-columns:1fr 1fr}}@media(max-width:560px){.schedule,.news{grid-template-columns:1fr}.card{padding:14px}.date{font-size:22px}.journal{font-size:14px}}
+
+/* Newsletter */
+.news-overlay{position:fixed;inset:0;background:#17203388;display:none;align-items:center;justify-content:center;padding:18px;z-index:1000;backdrop-filter:blur(4px)}
+.news-overlay.show{display:flex}
+.news-modal{position:relative;width:min(480px,100%);background:#fff;border-radius:22px;padding:30px;box-shadow:0 25px 80px #0004;text-align:center;animation:newsIn .25s ease}
+.news-icon{width:58px;height:58px;margin:0 auto 14px;border-radius:17px;background:#eef2ff;display:grid;place-items:center;font-size:29px}
+.news-modal h2{margin:0 0 8px;font-size:25px}
+.news-modal p{margin:0 0 20px;color:var(--muted)}
+.news-form{display:flex;gap:9px}
+.news-form input{flex:1;min-width:0;border:1px solid var(--line);border-radius:11px;padding:12px 13px;outline:0}
+.news-form input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #315efb18}
+.news-form button{border:0;border-radius:11px;padding:12px 16px;background:var(--blue);color:#fff;font-weight:800;cursor:pointer}
+.news-close{position:absolute;right:13px;top:11px;border:0;background:transparent;color:var(--muted);font-size:24px;cursor:pointer;padding:4px 9px}
+.news-later{margin-top:13px;border:0;background:transparent;color:var(--muted);font-weight:700;cursor:pointer}
+.news-note{font-size:12px!important;margin:14px 0 0!important}
+.news-success{display:none;color:var(--green);font-weight:800;margin-top:12px}
+@keyframes newsIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+@media(max-width:560px){.news-modal{padding:26px 20px}.news-form{flex-direction:column}.news-form button{width:100%}}
+
+/* Menu hamburger */
+.hamburger{width:46px;height:46px;border:1px solid #ffffff33;background:#ffffff18;color:#fff;border-radius:13px;display:grid;place-items:center;cursor:pointer;font-size:25px;line-height:1;flex:none}
+.hamburger span,.hamburger span:before,.hamburger span:after{display:block;width:21px;height:2px;background:#fff;border-radius:2px;content:"";position:relative}
+.hamburger span:before{position:absolute;top:-7px}
+.hamburger span:after{position:absolute;top:7px}
+.menuOverlay{position:fixed;inset:0;background:#17203366;display:none;z-index:2000;backdrop-filter:blur(2px)}
+.menuOverlay.open{display:block}
+.sideMenu{position:absolute;left:0;top:0;bottom:0;width:min(330px,88vw);background:#fff;box-shadow:20px 0 60px #0003;padding:22px 18px;transform:translateX(-105%);transition:transform .25s ease;overflow:auto}
+.menuOverlay.open .sideMenu{transform:translateX(0)}
+.menuTop{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.menuTitle{font-size:20px;font-weight:900}
+.menuClose{border:0;background:#f1f3f7;width:40px;height:40px;border-radius:11px;cursor:pointer;font-size:22px}
+.menuItem{display:flex;align-items:center;gap:12px;width:100%;border:1px solid var(--line);background:#fff;color:var(--ink);padding:14px;border-radius:13px;margin:9px 0;text-decoration:none;font-weight:800;cursor:pointer;text-align:left}
+.menuItem:hover{background:#f5f7ff;border-color:#c9d3f2}
+.menuIcon{font-size:21px;width:28px;text-align:center}
+.menuNote{font-size:12px;color:var(--muted);margin:18px 4px}
+@media(max-width:560px){.hamburger{width:44px;height:44px}.sideMenu{width:88vw}}
+
+/* Widget compte (haut à droite) */
+.acctToggle{border:1px solid #ffffff33;background:#ffffff18;color:#fff;border-radius:13px;padding:9px 14px;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:8px;font-size:14px;white-space:nowrap}
+.acctToggle:hover{background:#ffffff28}
+.msgDot{position:absolute;top:4px;right:6px;width:10px;height:10px;background:#e53935;border-radius:50%;border:2px solid var(--blue2)}
+.sideMenu.right{left:auto;right:0;transform:translateX(105%)}
+.menuOverlay.open .sideMenu.right{transform:translateX(0)}
+@media(max-width:560px){.acctToggle{padding:8px 10px;font-size:13px}.acctToggle .acctFull{display:none}}
+
+/* Compte & Administration */
+.roleBadge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:12px;font-weight:800}
+.roleBadge.lecteur{background:#eef2ff;color:#315efb}
+.roleBadge.redacteur{background:#fff3e0;color:#b5690b}
+.roleBadge.admin{background:#e6f7ef;color:var(--green)}
+.roleBadge.proprio{background:#f3e8ff;color:#7c3aed}
+.fieldRow{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.textIn,select.btn{border:1px solid var(--line);background:var(--surface);border-radius:11px;padding:10px 13px}
+textarea.textIn{width:100%;min-height:80px;resize:vertical;margin-top:8px;font:inherit}
+.newsItem{border:1px solid var(--line);border-radius:14px;padding:14px}
+.newsItem b{display:block;margin-bottom:5px}
+.iconBtn{padding:8px 11px;font-size:13px}
+
+.messageLayout{display:grid;grid-template-columns:260px 1fr;gap:0;height:100%}
+.messagePeople{border-right:1px solid var(--line);overflow:auto}
+.mpRow{display:flex;align-items:center;gap:11px}
+.mpAvatar{flex:none}
+.mpAvatar img,.mpAvatar .ph{width:46px;height:46px;border-radius:50%;object-fit:cover;background:#eef2ff;display:flex;align-items:center;justify-content:center;font-size:20px;border:1px solid var(--line)}
+.mpInfo{min-width:0;flex:1}
+.mpInfo b{display:block;font-size:14px}
+.mpInfo small{display:block;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.msgHeadRow{display:flex;align-items:center;gap:10px}
+.igModal{padding:0;max-width:760px;width:94vw;text-align:left;border-radius:20px;overflow:hidden;display:flex;flex-direction:column;height:min(600px,82vh)}
+.igHead{display:flex;align-items:center;justify-content:space-between;padding:15px 18px;border-bottom:1px solid var(--line);font-weight:900;font-size:17px}
+.igHead .news-close{position:static;padding:2px 6px}
+.igModal .messageLayout{flex:1;min-height:0}
+.igSend{width:42px;height:42px;border-radius:50%;padding:0;display:flex;align-items:center;justify-content:center;font-size:17px}
+.messagePerson{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:#fff;padding:11px 13px;cursor:pointer}
+.messagePerson:hover,.messagePerson.active{background:#f5f7ff}
+.messagePerson b{display:block}.messagePerson small{color:var(--muted)}
+.messageBox{display:flex;flex-direction:column;min-height:0}
+.messageHead{padding:13px 16px;border-bottom:1px solid var(--line);font-weight:850}
+.messageList{flex:1;overflow:auto;padding:14px;background:#fafbfe}
+.messageBubble{max-width:78%;padding:9px 12px;border-radius:14px;margin:7px 0;word-break:break-word}
+.messageBubble.mine{margin-left:auto;background:var(--blue);color:#fff;border-bottom-right-radius:4px}
+.messageBubble.theirs{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px}
+.messageMeta{font-size:11px;opacity:.7;margin-top:3px}
+.messageForm{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);align-items:center}
+.messageForm textarea{flex:1;min-height:42px;max-height:100px;resize:none;margin:0;border-radius:20px;padding:10px 15px}
+@media(max-width:700px){.messageLayout{grid-template-columns:1fr;grid-template-rows:150px 1fr}.igModal{height:92vh;width:100vw;border-radius:0}.messagePeople{border-right:0;border-bottom:1px solid var(--line)}.messageBubble{max-width:88%}}
+
+.hint{font-size:12px;color:var(--muted);margin-top:8px}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid #c7d1ff;border-top-color:var(--blue);border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Publicités */
+.ad-side{position:fixed;right:12px;top:50%;transform:translateY(-50%);width:160px;min-height:600px;z-index:50;display:flex;align-items:center;justify-content:center}
+.ad-bottom{width:100%;min-height:100px;margin:24px auto 0;display:flex;align-items:center;justify-content:center}
+.ad-label{font-size:10px;color:#98a2b3;text-align:center;margin-bottom:4px}
+@media(max-width:1100px){.ad-side{display:none}}
+</style></head>
+<body>
+<!-- Publicité latérale : ordinateur uniquement -->
+<aside class="ad-side" aria-label="Publicité">
+  <div style="width:160px;text-align:center">
+    <div class="ad-label">Publicité</div>
+    <!-- Remplace DATA-AD-SLOT par l'identifiant de ton bloc AdSense -->
+    <ins class="adsbygoogle" style="display:block;width:160px;min-height:600px" data-ad-client="ca-pub-7816141964451020" data-ad-slot="DATA-AD-SLOT" data-ad-format="vertical"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</aside>
+
+<header class="top"><div class="topin"><button class="hamburger" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button><div class="brand"><div class="mark">📚</div><div><div class="eyebrow" id="eyebrowText">CES Saint-Vincent · Soignies</div><div class="title" id="titleText">4è — Journal de classe</div><div class="sub">Un espace commun à toute la classe</div></div></div><button class="acctToggle" id="msgBtn" aria-label="Messagerie privée" style="position:relative"><span>💬</span><span class="acctFull">Messages</span><span id="msgDot" class="msgDot" style="display:none"></span></button><button class="acctToggle" id="acctBtn" aria-label="Mon compte"><span>👤</span><span class="acctFull" id="acctLabel">Se connecter</span></button></div></header>
+<div class="menuOverlay" id="acctOverlay" aria-hidden="true">
+  <aside class="sideMenu right" aria-label="Mon compte">
+    <div class="menuTop">
+      <div class="menuTitle">👤 Mon compte</div>
+      <button class="menuClose" id="acctClose" aria-label="Fermer">×</button>
+    </div>
+    <div class="muted" style="font-size:13px;margin-bottom:14px">Chaque personne a son propre compte protégé par un mot de passe — personne ne peut se connecter sous ton nom sans le connaître. Se connecter en tant qu'Admin demande en plus le code admin de la classe.</div>
+    <div id="accountLoggedOut">
+      <div class="fieldRow" style="flex-direction:column;align-items:stretch">
+        <input id="regPrenom" class="textIn" placeholder="Prénom">
+        <input id="regNom" class="textIn" placeholder="Nom">
+        <input id="loginPseudo" class="textIn" placeholder="Ton pseudo">
+        <input id="loginPassword" class="textIn" type="password" placeholder="Mot de passe">
+        <button class="btn primary" id="loginBtn">Se connecter</button>
+        <button class="btn" id="createAccountBtn">➕ Créer un compte</button>
+      </div>
+      <div class="hint">Nouveau ici ? Le prénom et le nom servent à t'afficher dans la liste des élèves. Puis clique sur « Créer un compte ». Le premier compte créé sur ce journal devient automatiquement Admin.</div>
+    </div>
+    <div id="accountLoggedIn" style="display:none">
+      <div class="myPhotoRow">
+        <img id="myPhoto" class="myPhoto" style="display:none" alt="">
+        <div id="myPhotoPh" class="myPhotoPh">🙂</div>
+        <div><b id="accountName"></b> <span id="accountRole"></span></div>
+      </div>
+      <input type="file" id="photoInput" accept="image/*" style="display:none">
+      <div style="display:flex;flex-direction:column;gap:9px">
+        <button class="btn" id="photoBtn">📷 Changer ma photo de profil</button>
+        <button class="btn" id="editNameBtn">✏️ Modifier prénom / nom</button>
+        <button class="btn" id="changePasswordBtn">🔑 Changer mon mot de passe</button>
+        <button class="btn" id="logoutBtn">Se déconnecter</button>
+      </div>
+    </div>
+    <div id="ownerBox" style="margin-top:16px;padding-top:16px;border-top:1px solid var(--line)">
+      <button class="btn" id="claimOwnerBtn" style="width:100%">🗝️ Code propriétaire</button>
+      <div class="muted" id="ownerActiveNote" style="display:none;font-size:12px;margin-top:8px">🗝️ Mode propriétaire actif — reste actif sur toutes les classes jusqu'à ce que tu te déconnectes.</div>
+    </div>
+  </aside>
+</div>
+<div class="menuOverlay" id="menuOverlay" aria-hidden="true">
+  <aside class="sideMenu" aria-label="Menu principal">
+    <div class="menuTop">
+      <div class="menuTitle">☰ Menu</div>
+      <button class="menuClose" id="menuClose" aria-label="Fermer le menu">×</button>
+    </div>
+    <a class="menuItem" href="horaire.html"><span class="menuIcon">🗓️</span><span>Emploi du temps</span></a>
+    <button class="menuItem" id="menuNews"><span class="menuIcon">📰</span><span>News du collège</span></button>
+    <button class="menuItem" id="menuStudents"><span class="menuIcon">🎓</span><span>Élèves de la classe</span></button>
+    <button class="menuItem" id="menuAdmin" style="display:none"><span class="menuIcon">🛡️</span><span>Administration</span></button>
+    <button class="menuItem" id="menuLeaveClass"><span class="menuIcon">🚪</span><span>Quitter la classe</span></button>
+    <div class="menuNote">Les rubriques s'ouvrent directement dans la page.</div>
+  </aside>
+</div>
+
+<main class="wrap">
+<div class="toolbar"><button class="btn primary" id="today">📅 Aujourd'hui</button><div class="calendarWrap"><button class="btn" id="calendarBtn">🗓️ Choisir une date</button><div class="calendar" id="calendar"><div class="calHead"><button class="btn" id="prevM">‹</button><b id="calTitle"></b><button class="btn" id="nextM">›</button></div><div class="calGrid" id="calGrid"></div></div></div><button class="btn" id="prevD">← Jour précédent</button><button class="btn" id="nextD">Jour suivant →</button></div>
+<section class="card"><div class="dateRow"><div><div class="eyebrow muted">Journée sélectionnée</div><div class="date" id="dateTitle"></div></div><div class="muted" id="journalHint">9 cours · commun à toute la classe</div></div></section>
+<section class="card"><div class="sectionHead"><div><h2 class="h2">📖 Journal de classe</h2><div class="muted">À gauche : devoirs / leçons · À droite : travail réalisé — modifiable par les rédacteurs et admins</div></div></div><div class="tableWrap"><table class="journal"><thead><tr><th class="num">Cours</th><th>📚 Devoirs / leçons</th><th>📝 Ce qui a été travaillé</th></tr></thead><tbody id="tbody"></tbody></table></div><div class="status" id="status"></div></section>
+
+<section class="card" id="newsSection"><h2 class="h2">📰 Actualités du collège</h2><p class="muted">Les dernières publications restent sur le site officiel de Saint-Vincent (voir « Liens utiles » ci-dessous).</p>
+
+<div id="localNewsForm" style="display:none;margin:14px 0">
+  <div class="fieldRow"><input id="newsTitleInput" class="textIn" style="flex:1;min-width:200px" placeholder="Titre de la news"></div>
+  <textarea id="newsContentInput" class="textIn" placeholder="Contenu de la news"></textarea>
+  <button class="btn primary" id="publishNewsBtn" style="margin-top:9px">📢 Publier une news</button>
+</div>
+
+<div class="news" id="localNewsList" style="margin-bottom:14px"></div>
+</section>
+
+<div class="news-overlay" id="studentsOverlay">
+  <div class="news-modal" style="text-align:left;max-width:640px;max-height:82vh;overflow:auto">
+    <button class="news-close" id="studentsClose" aria-label="Fermer">×</button>
+    <h2 class="h2">🎓 Élèves de la classe</h2>
+    <div class="muted" style="margin-bottom:14px">Liste par ordre alphabétique, visible par tous.</div>
+    <div class="studentsGrid" id="studentsGrid"></div>
+  </div>
+</div>
+<div class="news-overlay" id="messagesOverlay">
+  <div class="news-modal igModal">
+    <div class="igHead"><span>💬 Messages</span><button class="news-close" id="messagesClose" aria-label="Fermer">×</button></div>
+    <div id="messagesLoggedOut" class="muted" style="padding:26px">Connecte-toi pour utiliser la messagerie privée.</div>
+    <div id="messagesLoggedIn" style="display:none"><div class="messageLayout">
+    <div class="messagePeople" id="messagePeople"></div>
+    <div class="messageBox"><div class="messageHead" id="messageHead">Sélectionne une personne</div>
+    <div class="messageList" id="messageList"></div>
+    <form class="messageForm" id="messageForm"><textarea id="messageInput" class="textIn" placeholder="Écrire un message…" disabled></textarea><button class="btn primary igSend" id="sendMessageBtn" type="submit" disabled aria-label="Envoyer">➤</button></form>
+    </div></div></div>
+  </div>
+</div>
+<section class="card"><h2 class="h2">🔗 Liens utiles</h2><div class="links"><a class="link" target="_blank" rel="noopener" href="https://www.ces-st-vincent.be/">🏫 Site officiel</a><a class="link" target="_blank" rel="noopener" href="https://www.ces-st-vincent.be/actualites/">📰 Actualités</a><a class="link" target="_blank" rel="noopener" href="https://www.ces-st-vincent.be/actualites/ephemerides">📆 Éphémérides</a><a class="link" target="_blank" rel="noopener" href="https://www.ces-st-vincent.be/actualites/contacts">📞 Contacts</a><a class="link" target="_blank" rel="noopener" href="https://actus.cesv.be/">💻 Portail CESV</a></div></section>
+
+<section class="card" id="proprioSection" style="display:none">
+  <div class="sectionHead"><div><h2 class="h2">🗝️ Toutes les classes</h2><div class="muted">Visible uniquement par le rôle Propriétaire. Liste des classes attribuées et de leur état (créée ou non).</div></div><div style="display:flex;gap:9px;flex-wrap:wrap"><button class="btn" id="refreshClassesBtn">🔄 Actualiser</button><button class="btn" id="deleteAllClassesBtn" style="border-color:#e05353;color:#e05353">🗑️ Supprimer TOUTES les classes</button></div>
+  <div class="tableWrap">
+    <table class="journal">
+      <thead><tr><th>Classe</th><th>État</th><th>Actions</th></tr></thead>
+      <tbody id="classesTbody"><tr><td colspan="3" class="muted"><span class="spin"></span>Chargement…</td></tr></tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card" id="adminSection" style="display:none">
+  <div class="sectionHead"><div><h2 class="h2">🛡️ Administration</h2><div class="muted">Lecteur → Rédacteur → Admin. Lecteur : lecture seule. Rédacteur : peut aussi publier des news et modifier le journal de classe. Admin : peut tout faire, en plus de gérer les rôles. Promouvoir quelqu'un en Admin demande le code admin. Chacun crée son propre compte depuis « Mon compte » ; tu peux réinitialiser le mot de passe d'un camarade qui l'a oublié.</div></div></div>
+  <div class="tableWrap">
+    <table class="journal">
+      <thead><tr><th>Pseudo</th><th>Rôle</th><th>Actions</th></tr></thead>
+      <tbody id="usersTbody"><tr><td colspan="3" class="muted"><span class="spin"></span>Chargement…</td></tr></tbody>
+    </table>
+  </div>
+  <div class="fieldRow" id="adminCodeChangeRow" style="margin-top:16px;padding-top:14px;border-top:1px solid var(--line)">
+    <input id="newAdminCode" class="textIn" style="flex:1;min-width:180px" type="password" placeholder="Nouveau code admin">
+    <button class="btn" id="changeAdminCodeBtn">🔑 Changer le code admin</button>
+  </div>
+  <div class="hint" id="adminCodeChangeHint">Ce code est demandé pour se connecter en Admin ou pour promouvoir quelqu'un en Admin. Réservé au Propriétaire.</div>
+</section>
+</main>
+
+
+<!-- Publicité tout en bas : tous les appareils -->
+<div class="ad-bottom" aria-label="Publicité">
+  <div style="width:min(728px,100%);text-align:center">
+    <div class="ad-label">Publicité</div>
+    <!-- Remplace DATA-AD-SLOT par l'identifiant de ton bloc AdSense -->
+    <ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-7816141964451020" data-ad-slot="DATA-AD-SLOT" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+<footer class="footer">V4.6 · Journal de classe · CES Saint-Vincent de Soignies<br><small>Ceci est un site entièrement indépendant du CES</small></footer>
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js';
+import { getFirestore, doc, getDoc, setDoc, collection, getDocs, deleteDoc } from 'https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js';
+import { getMessaging, getToken, onMessage, isSupported } from 'https://www.gstatic.com/firebasejs/12.17.1/firebase-messaging.js';
+const firebaseConfig = {
+  apiKey: "AIzaSyBjRbFOVcitLkblW-coG2ZqM1raGxXztLg",
+  authDomain: "journal-classe.firebaseapp.com",
+  projectId: "journal-classe",
+  storageBucket: "journal-classe.firebasestorage.app",
+  messagingSenderId: "2266099565",
+  appId: "1:2266099565:web:6ca1fc6e53669d49e3b464"
+};
+const fbApp = initializeApp(firebaseConfig);
+const db = getFirestore(fbApp);
+// 🔔 Clé VAPID à récupérer dans Firebase Console → Paramètres du projet → Cloud Messaging → Certificats web push
+const VAPID_KEY = "COLLE_ICI_TA_CLE_VAPID";
+let messaging = null;
+const VALID_CLASSES=['5AZ7XQ','6BUXWD','6S8A86','9UERJR','BVCGV3','EXVHW3','FW3CGA','J2HRZD','MC55D8','N5ZNNN','NRBYVF','Q3DWPP','QKQUN8','R39TZZ','S5S8JK','UATG8Q','W2QVVQ','XYJ5QP','YMHN7U','ZQXWFE'];
+const CLASS_LABELS={'5AZ7XQ':'4A','6BUXWD':'4B','6S8A86':'4C','9UERJR':'4D','BVCGV3':'4E','EXVHW3':'4F','FW3CGA':'4G','J2HRZD':'4H','MC55D8':'4I','N5ZNNN':'4J','NRBYVF':'4K','Q3DWPP':'4L','QKQUN8':'4M','R39TZZ':'4N','S5S8JK':'4O','UATG8Q':'4P','W2QVVQ':'4Q','XYJ5QP':'4R','YMHN7U':'4S','ZQXWFE':'4T'};
+function getClassId(){
+  const params=new URLSearchParams(location.search);
+  let c=params.get('classe');
+  if(c)c=c.trim().toUpperCase();
+  if(c&&!VALID_CLASSES.includes(c))c=null;
+  if(!c){
+    let stored=localStorage.getItem('jc_classe');
+    if(stored&&VALID_CLASSES.includes(stored))c=stored;
+  }
+  while(!c){
+    let entered=prompt("Code de la classe — demande-le à ton professeur :");
+    if(entered){
+      entered=entered.trim().toUpperCase();
+      if(VALID_CLASSES.includes(entered))c=entered;
+      else alert("Ce code de classe n'existe pas. Vérifie l'orthographe et réessaie.");
+    }
+  }
+  localStorage.setItem('jc_classe',c);
+  return c;
+}
+const CLASS_ID=getClassId();
+const CLASS_LABEL=CLASS_LABELS[CLASS_ID]||CLASS_ID;
+const CONFIG = { ecole: 'CES Saint-Vincent · Soignies', classe: CLASS_LABEL+' — Journal de classe', ongletNavigateur: CLASS_LABEL+' · Journal de classe — Saint-Vincent' }; const $=x=>document.getElementById(x); function esc(s){return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))} document.title=CONFIG.ongletNavigateur; $('pageTitleTag').textContent=CONFIG.ongletNavigateur; $('eyebrowText').textContent=CONFIG.ecole; $('titleText').textContent=CONFIG.classe; function leaveClass(){ if(!confirm('Quitter cette classe ? Il faudra entrer un nouveau code pour en rejoindre une autre.'))return; localStorage.removeItem('jc_classe'); location.href=location.pathname; } { let sc=document.querySelector('a[href="horaire.html"]'); if(sc)sc.href='horaire.html?classe='+encodeURIComponent(CLASS_ID); } async function sGet(key,shared){ try{ if(!shared){const v=localStorage.getItem('jc_'+CLASS_ID+'_'+key);return v===null?null:JSON.parse(v);} const snap=await getDoc(doc(db,'classes',CLASS_ID,'data',key)); return snap.exists()?snap.data().value:null; } catch(e){console.error('Erreur de lecture',e);return null;} } async function sSet(key,value,shared){ try{ if(!shared){localStorage.setItem('jc_'+CLASS_ID+'_'+key,JSON.stringify(value));return;} await setDoc(doc(db,'classes',CLASS_ID,'data',key),{value}); }catch(e){console.error('Erreur de sauvegarde',e);} } const ROLE_RANK={lecteur:1,redacteur:2,admin:3,proprio:4}; const ROLE_LABEL={lecteur:'Lecteur',redacteur:'Rédacteur',admin:'Admin',proprio:'Propriétaire'}; const OWNER_CODE='Lesmasques'; const OWNER_DOC='ownerLock';
+function ownerToken(){return localStorage.getItem('jc_owner_token')||''}
+function isGlobalOwner(){return !!ownerToken()&&localStorage.getItem('jc_owner_unlocked')==='1'}
+let usersCache=[], newsCache=[], messagesCache=[], meId=null, selectedMessageUserId=null; async function getAdminCode(){return (await sGet('adminCode',true))||'BouzeloufJulia13'} async function checkAdminCode(){ let real=await getAdminCode(); let entered=prompt('Code admin requis :'); if(entered===null)return false; if(entered!==real){alert('Code incorrect.');return false;} return true; } function can(role,action){ if(!role)return false; if(action==='news')return ROLE_RANK[role]>=ROLE_RANK.redacteur; if(action==='admin')return role==='admin'||role==='proprio'; return true; } async function claimOwner(){
+ if(isGlobalOwner()){alert('Le mode propriétaire est déjà actif.');return;}
+ let code=prompt('Code propriétaire :'); if(code===null)return;
+ if(code!==OWNER_CODE){alert('Code incorrect.');return;}
+ try{
+  let snap=await getDoc(doc(db,'classes','_global','data',OWNER_DOC));
+  let existing=snap.exists()?snap.data():null, token=ownerToken();
+  if(!token)token='owner-'+crypto.randomUUID();
+  await setDoc(doc(db,'classes','_global','data',OWNER_DOC),{token,createdAt:existing?.createdAt||Date.now()});
+  localStorage.setItem('jc_owner_token',token);localStorage.setItem('jc_owner_unlocked','1');
+  renderAll();alert('Mode propriétaire activé. Le Propriétaire remplace l’Admin et est unique.');
+ }catch(e){console.error(e);alert('Impossible de vérifier le propriétaire.');}
+}
+async function listAllClasses(){ let tbody=$('classesTbody'); tbody.innerHTML=''; for(const code of VALID_CLASSES){ let label=CLASS_LABELS[code]||code; let tr=document.createElement('tr'); let td1=document.createElement('td'); let goBtn=document.createElement('button'); goBtn.className='btn iconBtn'; goBtn.textContent='➡️ '+label; goBtn.title='Accéder à la classe '+label; goBtn.onclick=()=>{location.href=location.pathname+'?classe='+encodeURIComponent(code)}; td1.appendChild(goBtn); let td2=document.createElement('td');td2.textContent='Vérification…'; let td3=document.createElement('td'); tr.append(td1,td2,td3); tbody.appendChild(tr); let exists=false; try{ let snap=await getDoc(doc(db,'classes',code,'data','users')); exists=snap.exists()&&Array.isArray(snap.data().value)&&snap.data().value.length>0; }catch(e){} td2.textContent=exists?'Créée':'Non utilisée'; if(exists){ let del=document.createElement('button');del.className='btn iconBtn';del.textContent='🗑️ Supprimer les données'; del.onclick=()=>deleteClassData(code,label,td2,del); td3.appendChild(del); } } } async function deleteClassData(code,label,td2,btn){ if(!confirm('Supprimer TOUTES les données de la classe '+label+' (comptes, journal, news) ? Cette action est irréversible.'))return; btn.disabled=true;btn.textContent='Suppression…'; try{ let snap=await getDocs(collection(db,'classes',code,'data')); for(const d of snap.docs){await deleteDoc(d.ref);} td2.textContent='Non utilisée'; btn.remove(); alert('Données de la classe '+label+' supprimées.'); }catch(e){console.error(e);alert('Erreur lors de la suppression.');btn.disabled=false;btn.textContent='🗑️ Supprimer les données';} }
+async function deleteAllClassesData(){ let me=currentUser(); if(!me||me.role!=='proprio'){alert('Réservé au Propriétaire.');return;} if(!confirm('⚠️ Supprimer TOUTES les données de TOUTES les classes (comptes, journaux, news, messages) ? Cette action est IRRÉVERSIBLE et concerne les '+VALID_CLASSES.length+' classes.'))return; if(!confirm('Dernière confirmation : es-tu certain(e) ? Tout sera définitivement perdu pour toutes les classes.'))return; let btn=$('deleteAllClassesBtn'); btn.disabled=true;btn.textContent='Suppression en cours…'; let done=0; for(const code of VALID_CLASSES){ try{ let snap=await getDocs(collection(db,'classes',code,'data')); for(const d of snap.docs){await deleteDoc(d.ref);} }catch(e){console.error('Erreur pour la classe',code,e);} done++; btn.textContent='Suppression… ('+done+'/'+VALID_CLASSES.length+')'; } btn.disabled=false;btn.textContent='🗑️ Supprimer TOUTES les classes'; alert('Toutes les données de toutes les classes ont été supprimées.'); listAllClasses(); } const OWNER_DISPLAY={id:'__owner__',pseudo:'Propriétaire',prenom:'',nom:'',photo:null,role:'proprio'}; function findMsgUser(id){ if(String(id)==='__owner__')return OWNER_DISPLAY; return usersCache.find(x=>String(x.id)===String(id)); } function currentUser(){ if(isGlobalOwner())return OWNER_DISPLAY; return usersCache.find(x=>String(x.id)===String(meId))||null; } async function loadUsers(){ let u=await sGet('users',true); usersCache=Array.isArray(u)?u:[]; } async function saveUsers(){await sSet('users',usersCache,true)} async function loadNews(){newsCache=(await sGet('news',true))||[]} async function saveNews(){await sSet('news',newsCache,true)} async function hashPass(pw){ let buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(pw||'')); return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join(''); } async function login(pseudo,password){ pseudo=(pseudo||'').trim(); let u=usersCache.find(x=>x.pseudo.toLowerCase()===pseudo.toLowerCase()); if(!u){alert("Ce pseudo n'existe pas encore. Clique sur « Créer un compte ».");return;} if(u.password!==await hashPass(password)){alert('Mot de passe incorrect.');return;} if(u.role==='admin'){ let ok=await checkAdminCode(); if(!ok)return; } meId=u.id; await sSet('currentUserId',meId,false); $('loginPseudo').value='';$('loginPassword').value=''; renderAccount();journal(); } async function logout(){ if(isGlobalOwner()){ localStorage.removeItem('jc_owner_unlocked'); renderAccount();journal(); return; } meId=null; await sSet('currentUserId',null,false); renderAccount();journal(); } async function createAccount(prenom,nom,pseudo,password){ prenom=(prenom||'').trim();nom=(nom||'').trim();pseudo=(pseudo||'').trim(); if(!prenom||!nom){alert('Merci de renseigner ton prénom et ton nom.');return;} if(!pseudo){alert('Choisis un pseudo.');return;} if(!password||password.length<4){alert('Le mot de passe doit faire au moins 4 caractères.');return;} if(usersCache.some(x=>x.pseudo.toLowerCase()===pseudo.toLowerCase())){alert('Ce pseudo existe déjà — connecte-toi plutôt avec ton mot de passe.');return;} let role=usersCache.length===0?'admin':'lecteur'; let u={id:'u-'+Date.now(),pseudo,prenom,nom,photo:null,role,password:await hashPass(password)}; usersCache.push(u); await saveUsers(); meId=u.id; await sSet('currentUserId',meId,false); $('regPrenom').value='';$('regNom').value='';$('loginPseudo').value='';$('loginPassword').value=''; if(role==='admin')alert('Tu es le premier compte créé sur ce journal : tu es automatiquement Admin !'); renderAll();journal(); } async function changeMyPassword(){ let u=currentUser();if(!u)return; let cur=prompt('Ton mot de passe actuel :'); if(cur===null)return; if(await hashPass(cur)!==u.password){alert('Mot de passe actuel incorrect.');return;} let np=prompt('Nouveau mot de passe (min. 4 caractères) :'); if(np===null)return; if(np.length<4){alert('Trop court (minimum 4 caractères).');return;} u.password=await hashPass(np); await saveUsers(); alert('Mot de passe changé.'); } async function resetUserPassword(id){ let me=currentUser(); if(!me||me.role!=='proprio'){alert('Réservé au propriétaire.');return;} let u=usersCache.find(x=>x.id===id);if(!u)return; let np=prompt('Nouveau mot de passe pour '+u.pseudo+' (min. 4 caractères) :'); if(np===null)return; if(np.length<4){alert('Trop court (minimum 4 caractères).');return;} u.password=await hashPass(np); await saveUsers(); alert('Mot de passe de '+u.pseudo+' réinitialisé — communique-le lui.'); } async function promoteUser(id){ let u=usersCache.find(x=>x.id===id);if(!u)return; let nextRole=u.role==='lecteur'?'redacteur':(u.role==='redacteur'?'admin':null); if(!nextRole)return; if(nextRole==='admin'){ let ok=await checkAdminCode(); if(!ok)return; } u.role=nextRole; await saveUsers();renderAll(); } async function demoteUser(id){ let u=usersCache.find(x=>x.id===id);if(!u)return; if(u.role==='admin')u.role='redacteur';else if(u.role==='redacteur')u.role='lecteur'; await saveUsers();renderAll(); } async function removeUser(id){ let me=currentUser(); if(!me||me.role!=='proprio'){alert('Réservé au Propriétaire.');return;} let u=usersCache.find(x=>x.id===id);if(!u)return; if(u.role==='proprio'){alert('Le Propriétaire ne peut pas être supprimé ici.');return;} usersCache=usersCache.filter(x=>x.id!==id); await saveUsers(); if(String(meId)===String(id))await logout(); renderAll(); } async function publishNews(title,content){ let u=currentUser(); if(!u||!can(u.role,'news')){alert('Il faut être rédacteur ou admin pour publier une news.');return;} title=(title||'').trim();content=(content||'').trim(); if(!title||!content){alert('Merci de remplir le titre et le contenu.');return;} newsCache.push({id:'n-'+Date.now(),title,content,author:u.pseudo,date:Date.now()}); await saveNews();renderAll(); } async function removeNews(id){newsCache=newsCache.filter(x=>x.id!==id);await saveNews();renderAll();} function resizePhoto(file){ return new Promise((resolve,reject)=>{ let reader=new FileReader(); reader.onload=e=>{ let img=new Image(); img.onload=()=>{ let size=160; let canvas=document.createElement('canvas'); canvas.width=size;canvas.height=size; let ctx=canvas.getContext('2d'); let s=Math.min(img.width,img.height); let sx=(img.width-s)/2, sy=(img.height-s)/2; ctx.drawImage(img,sx,sy,s,s,0,0,size,size); resolve(canvas.toDataURL('image/jpeg',0.72)); }; img.onerror=reject; img.src=e.target.result; }; reader.onerror=reject; reader.readAsDataURL(file); }); } async function changeMyPhoto(file){ let u=currentUser(); if(!u||u.id==='__owner__'){alert('Connecte-toi avec un compte de classe pour changer ta photo.');return;} if(!file)return; try{ u.photo=await resizePhoto(file); await saveUsers(); renderAll(); }catch(e){alert('Impossible de traiter cette image.');} } async function editMyName(){ let u=currentUser(); if(!u||u.id==='__owner__'){alert('Connecte-toi avec un compte de classe pour modifier ton nom.');return;} let prenom=prompt('Prénom :',u.prenom||''); if(prenom===null)return; let nom=prompt('Nom :',u.nom||''); if(nom===null)return; u.prenom=prenom.trim();u.nom=nom.trim(); await saveUsers(); renderAll(); } 
+function displayName(u){return ((u.prenom||'')+' '+(u.nom||'')).trim()||u.pseudo}
+async function enableNotifications(){
+ let u=currentUser();
+ if(!u||u.id==='__owner__'){alert('Connecte-toi avec un compte de classe pour activer les notifications.');return;}
+ if(!('Notification' in window)||!('serviceWorker' in navigator)){alert('Les notifications ne sont pas supportées sur cet appareil ou ce navigateur.');return;}
+ if(VAPID_KEY.includes('COLLE_ICI')){alert('Les notifications ne sont pas encore configurées par l’admin du site (clé VAPID manquante).');return;}
+ try{
+  let ok=await isSupported();
+  if(!ok){alert('Les notifications ne sont pas supportées sur cet appareil ou ce navigateur.');return;}
+  let perm=await Notification.requestPermission();
+  if(perm!=='granted'){alert('Notifications refusées. Tu pourras les réactiver dans les réglages du navigateur.');return;}
+  let reg=await navigator.serviceWorker.register('firebase-messaging-sw.js');
+  if(!messaging)messaging=getMessaging(fbApp);
+  let token=await getToken(messaging,{vapidKey:VAPID_KEY,serviceWorkerRegistration:reg});
+  if(!token){alert('Impossible de générer le jeton de notification.');return;}
+  let tokensMap=(await sGet('pushTokens',true))||{};
+  let list=Array.isArray(tokensMap[u.id])?tokensMap[u.id]:[];
+  if(!list.includes(token))list.push(token);
+  tokensMap[u.id]=list;
+  await sSet('pushTokens',tokensMap,true);
+  alert('Notifications activées ✅ Tu recevras une alerte pour les nouveaux messages et les news, même appli fermée.');
+ }catch(e){console.error(e);alert('Erreur lors de l’activation des notifications.');}
+}
+(async()=>{
+ try{
+  if(await isSupported()){
+   messaging=getMessaging(fbApp);
+   onMessage(messaging,payload=>{
+    if(Notification.permission==='granted'){
+     new Notification(payload.notification?.title||'Journal de classe',{body:payload.notification?.body||''});
+    }
+   });
+  }
+ }catch(e){}
+})();
+async function loadMessages(){let v=await sGet('messages',true);messagesCache=Array.isArray(v)?v:[]}
+async function saveMessages(){await sSet('messages',messagesCache,true)}
+function avatarHtml(u,size){return u.photo?`<img src="${u.photo}" style="width:${size}px;height:${size}px" alt="">`:`<div class="ph" style="width:${size}px;height:${size}px">🙂</div>`}
+function updateMsgDot(){ let dot=$('msgDot'); if(!dot)return; let me=currentUser(); let unread=!!me&&messagesCache.some(m=>String(m.to)===String(me.id)&&!m.read); dot.style.display=unread?'block':'none'; }
+async function markMessagesRead(){ let me=currentUser(); if(!me)return; let changed=false; messagesCache.forEach(m=>{ if(String(m.to)===String(me.id)&&!m.read){m.read=true;changed=true;} }); if(changed)await saveMessages(); updateMsgDot(); }
+function renderMessages(){
+ const me=currentUser(), logged=$('messagesLoggedIn'), out=$('messagesLoggedOut'), people=$('messagePeople'), list=$('messageList'), head=$('messageHead');
+ updateMsgDot();
+ if(!me){logged.style.display='none';out.style.display='block';return}
+ logged.style.display='flex';out.style.display='none';people.innerHTML='';
+ let msgTargets=usersCache.filter(u=>String(u.id)!==String(me.id));
+ if(String(me.id)!=='__owner__')msgTargets=msgTargets.concat([OWNER_DISPLAY]);
+ msgTargets.sort((a,b)=>displayName(a).localeCompare(displayName(b),'fr')).forEach(u=>{
+  let b=document.createElement('button');b.className='messagePerson'+(String(selectedMessageUserId)===String(u.id)?' active':'');
+  let convo=messagesCache.filter(m=>(String(m.from)===String(me.id)&&String(m.to)===String(u.id))||(String(m.from)===String(u.id)&&String(m.to)===String(me.id))).sort((a,b)=>a.date-b.date);
+  let lastMsg=convo[convo.length-1];
+  let preview=lastMsg?(String(lastMsg.from)===String(me.id)?'Vous : ':'')+esc(lastMsg.text):'Dis bonjour 👋';
+  b.innerHTML=`<div class="mpRow"><div class="mpAvatar">${avatarHtml(u,46)}</div><div class="mpInfo"><b>${esc(displayName(u))}</b><small>${preview}</small></div></div>`;
+  b.onclick=()=>{selectedMessageUserId=u.id;renderMessages()};people.appendChild(b)
+ });
+ let other=findMsgUser(selectedMessageUserId);
+ if(!other){head.textContent='Sélectionne une personne';list.innerHTML='<div class="muted">Choisis quelqu’un pour commencer une conversation privée.</div>';$('messageInput').disabled=true;$('sendMessageBtn').disabled=true;return}
+ head.innerHTML=`<div class="msgHeadRow">${avatarHtml(other,32)}<b>${esc(displayName(other))}</b></div>`;
+ let convo=messagesCache.filter(m=>(String(m.from)===String(me.id)&&String(m.to)===String(other.id))||(String(m.from)===String(other.id)&&String(m.to)===String(me.id))).sort((a,b)=>a.date-b.date);
+ list.innerHTML=convo.length?'':'<div class="muted">Aucun message. Commence la conversation !</div>';
+ convo.forEach(m=>{let d=document.createElement('div');d.className='messageBubble '+(String(m.from)===String(me.id)?'mine':'theirs');d.innerHTML='<div>'+esc(m.text).replace(/\n/g,'<br>')+'</div><div class="messageMeta">'+(String(m.from)===String(me.id)?'Vous':esc(displayName(other)))+' · '+new Date(m.date).toLocaleString('fr-BE',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})+'</div>';list.appendChild(d)});
+ list.scrollTop=list.scrollHeight;$('messageInput').disabled=false;$('sendMessageBtn').disabled=false
+}
+async function sendPrivateMessage(text){
+ let me=currentUser(),other=findMsgUser(selectedMessageUserId);text=(text||'').trim();if(!me||!other||!text)return;
+ messagesCache.push({id:'m-'+Date.now(),from:me.id,to:other.id,text,date:Date.now(),read:false});await saveMessages();$('messageInput').value='';renderMessages()
+}
+function renderStudents(){ let grid=$('studentsGrid'); if(!grid)return; grid.innerHTML=''; let list=usersCache.filter(u=>u.id!=='__owner__').slice().sort((a,b)=>{ let an=(a.nom||a.pseudo||'').toLowerCase(), bn=(b.nom||b.pseudo||'').toLowerCase(); if(an!==bn)return an.localeCompare(bn,'fr'); return (a.prenom||'').toLowerCase().localeCompare((b.prenom||'').toLowerCase(),'fr'); }); if(!list.length){grid.innerHTML='<div class="muted">Aucun élève inscrit pour le moment.</div>';return;} list.forEach(u=>{ let card=document.createElement('div');card.className='studentCard'; if(u.photo)card.innerHTML+=`<img class="studentPhoto" src="${u.photo}" alt="">`; else card.innerHTML+='<div class="studentPhotoPh">🙂</div>'; let name=(u.prenom||u.nom)?`${esc(u.prenom||'')} ${esc(u.nom||'')}`.trim():esc(u.pseudo); card.innerHTML+=`<div class="studentName">${name}</div>`; grid.appendChild(card); }); } let proprioListed=false; function renderAccount(){ let u=currentUser(); $('accountLoggedOut').style.display=u?'none':'block'; $('accountLoggedIn').style.display=u?'block':'none'; if(u){ $('accountName').textContent=u.pseudo; $('accountRole').innerHTML=`<span class="roleBadge ${u.role}">${ROLE_LABEL[u.role]}</span>`; $('acctLabel').textContent=u.pseudo; if(u.photo){$('myPhoto').src=u.photo;$('myPhoto').style.display='block';$('myPhotoPh').style.display='none';}else{$('myPhoto').style.display='none';$('myPhotoPh').style.display='flex';} }else{ $('acctLabel').textContent='Se connecter'; } $('claimOwnerBtn').style.display=isGlobalOwner()?'none':'block'; $('adminSection').style.display=(u&&(u.role==='admin'||u.role==='proprio'))?'block':'none'; $('menuAdmin').style.display=(u&&(u.role==='admin'||u.role==='proprio'))?'flex':'none'; $('proprioSection').style.display=(u&&u.role==='proprio')?'block':'none'; if(u&&u.role==='proprio'){ if(!proprioListed){proprioListed=true;listAllClasses();} }else{ proprioListed=false; } $('localNewsForm').style.display=(u&&can(u.role,'news'))?'block':'none'; let ccr=$('adminCodeChangeRow'), cch=$('adminCodeChangeHint'); if(ccr)ccr.style.display=(u&&u.role==='proprio')?'flex':'none'; if(cch)cch.style.display=(u&&u.role==='proprio')?'block':'none'; } function renderUsersTable(){ let me=currentUser(); let tbody=$('usersTbody');tbody.innerHTML=''; usersCache.forEach(u=>{ let tr=document.createElement('tr'); let td1=document.createElement('td');td1.textContent=u.pseudo+(me&&me.id===u.id?' (vous)':''); let td2=document.createElement('td');td2.innerHTML=`<span class="roleBadge ${u.role}">${ROLE_LABEL[u.role]}</span>`; let td3=document.createElement('td'); let up=document.createElement('button');up.className='btn iconBtn';up.textContent='⬆️ Promouvoir';up.disabled=(u.role==='admin'||u.role==='proprio');up.onclick=()=>promoteUser(u.id); let down=document.createElement('button');down.className='btn iconBtn';down.style.marginLeft='6px';down.textContent='⬇️ Rétrograder';down.disabled=u.role==='lecteur';down.onclick=()=>demoteUser(u.id); td3.append(up,down); if(me&&me.role==='proprio'){ let reset=document.createElement('button');reset.className='btn iconBtn';reset.style.marginLeft='6px';reset.textContent='🔑 Mdp';reset.onclick=()=>resetUserPassword(u.id); td3.appendChild(reset); } if(me&&me.role==='proprio'){ let del=document.createElement('button');del.className='btn iconBtn';del.style.marginLeft='6px';del.textContent='🗑️ Supprimer';del.onclick=()=>{if(confirm('Supprimer '+u.pseudo+' ?'))removeUser(u.id)}; td3.appendChild(del); } tr.append(td1,td2,td3);tbody.appendChild(tr); }); } function renderLocalNews(){ let news=newsCache.slice().sort((a,b)=>b.date-a.date); let box=$('localNewsList');box.innerHTML=''; let u=currentUser(); news.forEach(n=>{ let d=document.createElement('div');d.className='newsItem'; d.innerHTML=`<b>📌 ${esc(n.title)}</b><div class="muted">${esc(n.content)}</div><small class="muted">Par ${esc(n.author)} · ${new Date(n.date).toLocaleDateString('fr-BE')} à ${new Date(n.date).toLocaleTimeString('fr-BE',{hour:'2-digit',minute:'2-digit'})}</small>`; if(u&&can(u.role,'admin')){ let rm=document.createElement('button');rm.className='btn iconBtn';rm.style.marginTop='9px';rm.textContent='🗑️ Retirer'; rm.onclick=()=>removeNews(n.id); d.appendChild(rm); } box.appendChild(d); }); } function renderAll(){renderAccount();renderUsersTable();renderLocalNews();renderStudents();renderMessages()} $('loginBtn').onclick=()=>login($('loginPseudo').value,$('loginPassword').value); $('createAccountBtn').onclick=()=>createAccount($('regPrenom').value,$('regNom').value,$('loginPseudo').value,$('loginPassword').value); $('changePasswordBtn').onclick=changeMyPassword; $('claimOwnerBtn').onclick=claimOwner; $('logoutBtn').onclick=logout; $('photoBtn').onclick=()=>$('photoInput').click(); $('photoInput').onchange=e=>{changeMyPhoto(e.target.files[0]);e.target.value='';}; $('editNameBtn').onclick=editMyName; $('publishNewsBtn').onclick=()=>{publishNews($('newsTitleInput').value,$('newsContentInput').value);$('newsTitleInput').value='';$('newsContentInput').value=''}; $('changeAdminCodeBtn').onclick=async()=>{ let u=currentUser(); if(!u||u.role!=='proprio'){alert('Réservé au Propriétaire.');return;} let val=$('newAdminCode').value.trim(); if(!val||val.length<4){alert('Le nouveau code doit faire au moins 4 caractères.');return;} await sSet('adminCode',val,true); $('newAdminCode').value=''; alert('Code admin mis à jour pour toute la classe.'); }; const S={date:new Date(),month:new Date()};const days=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'],months=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];const pad=n=>String(n).padStart(2,'0'); function jkey(){let d=S.date;return`journal-${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`} function fmt(d){return days[d.getDay()][0].toUpperCase()+days[d.getDay()].slice(1)+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()} async function journal(){ $('dateTitle').textContent=fmt(S.date); $('tbody').innerHTML='<tr><td colspan="3" class="muted"><span class="spin"></span>Chargement…</td></tr>'; let d=(await sGet(jkey(),true))||{}; let u=currentUser(); let editable=!!u&&can(u.role,'news'); $('journalHint').textContent=editable?'9 cours · commun à toute la classe · vos modifications sont visibles par tous':'9 cours · commun à toute la classe · lecture seule (réservé aux rédacteurs et admins)'; $('tbody').innerHTML=''; for(let i=1;i<=9;i++){ let tr=document.createElement('tr'); tr.innerHTML=`<td class="num">Cours ${i}</td><td><div class="edit" contenteditable="${editable}" data-i="${i}" data-f="homework">${esc(d[i]?.homework||'')}</div></td><td><div class="edit" contenteditable="${editable}" data-i="${i}" data-f="work">${esc(d[i]?.work||'')}</div></td>`; $('tbody').appendChild(tr); } document.querySelectorAll('.edit').forEach(e=>e.addEventListener('input',async()=>{ let data=(await sGet(jkey(),true))||{}; let i=e.dataset.i;data[i]=data[i]||{};data[i][e.dataset.f]=e.innerText.trim(); await sSet(jkey(),data,true); $('status').textContent='✓ Enregistré pour toute la classe';clearTimeout(window.st);window.st=setTimeout(()=>$('status').textContent='',1800); })); } async function refreshJournalQuiet(){ let d=(await sGet(jkey(),true))||{}; let u=currentUser(); let editable=!!u&&can(u.role,'news'); $('journalHint').textContent=editable?'9 cours · commun à toute la classe · vos modifications sont visibles par tous':'9 cours · commun à toute la classe · lecture seule (réservé aux rédacteurs et admins)'; document.querySelectorAll('.edit').forEach(e=>{ if(e===document.activeElement)return; let val=(d[e.dataset.i]&&d[e.dataset.i][e.dataset.f])||''; if(e.innerText.trim()!==val)e.textContent=val; if(String(e.contentEditable)!==String(editable))e.contentEditable=editable; }); } function calendar(){let y=S.month.getFullYear(),m=S.month.getMonth();$('calTitle').textContent=months[m]+' '+y;$('calGrid').innerHTML='';['Lu','Ma','Me','Je','Ve','Sa','Di'].forEach(x=>{let e=document.createElement('div');e.className='dow';e.textContent=x;$('calGrid').appendChild(e)});let first=new Date(y,m,1),off=(first.getDay()+6)%7,total=new Date(y,m+1,0).getDate();for(let i=0;i<off;i++){let e=document.createElement('div');e.className='empty';$('calGrid').appendChild(e)}for(let n=1;n<=total;n++){let e=document.createElement('button');e.className='day';e.textContent=n;if(n==S.date.getDate()&&m==S.date.getMonth()&&y==S.date.getFullYear())e.classList.add('selected');let now=new Date();if(n==now.getDate()&&m==now.getMonth()&&y==now.getFullYear())e.classList.add('today');e.onclick=()=>{S.date=new Date(y,m,n);S.month=new Date(y,m,1);render();$('calendar').classList.remove('open')};$('calGrid').appendChild(e)}} function render(){journal();calendar()} $('today').onclick=()=>{S.date=new Date();S.month=new Date(S.date.getFullYear(),S.date.getMonth(),1);render()}; $('prevD').onclick=()=>{do{S.date.setDate(S.date.getDate()-1)}while(S.date.getDay()===0||S.date.getDay()===6);S.month=new Date(S.date.getFullYear(),S.date.getMonth(),1);render()}; $('nextD').onclick=()=>{do{S.date.setDate(S.date.getDate()+1)}while(S.date.getDay()===0||S.date.getDay()===6);S.month=new Date(S.date.getFullYear(),S.date.getMonth(),1);render()}; $('calendarBtn').onclick=()=>{$('calendar').classList.toggle('open');calendar()}; $('prevM').onclick=()=>{S.month.setMonth(S.month.getMonth()-1);calendar()}; $('nextM').onclick=()=>{S.month.setMonth(S.month.getMonth()+1);calendar()}; document.addEventListener('click',e=>{if(!$('calendar').contains(e.target)&&e.target!==$('calendarBtn'))$('calendar').classList.remove('open')}); calendar(); const menuOverlay=document.getElementById('menuOverlay'); const menuBtn=document.getElementById('menuBtn'); const menuClose=document.getElementById('menuClose'); function openMenu(){menuOverlay.classList.add('open');menuOverlay.setAttribute('aria-hidden','false');menuBtn.setAttribute('aria-expanded','true')} function closeMenu(){menuOverlay.classList.remove('open');menuOverlay.setAttribute('aria-hidden','true');menuBtn.setAttribute('aria-expanded','false')} menuBtn.addEventListener('click',openMenu); menuClose.addEventListener('click',closeMenu); menuOverlay.addEventListener('click',e=>{if(e.target===menuOverlay)closeMenu()}); document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();closeAcct();document.getElementById('studentsOverlay')?.classList.remove('show');document.getElementById('messagesOverlay')?.classList.remove('show');}}); const acctOverlay=document.getElementById('acctOverlay'); const acctBtn=document.getElementById('acctBtn'); const acctClose=document.getElementById('acctClose'); function openAcct(){acctOverlay.classList.add('open');acctOverlay.setAttribute('aria-hidden','false')} function closeAcct(){acctOverlay.classList.remove('open');acctOverlay.setAttribute('aria-hidden','true')} acctBtn.addEventListener('click',openAcct); acctClose.addEventListener('click',closeAcct); acctOverlay.addEventListener('click',e=>{if(e.target===acctOverlay)closeAcct()}); document.getElementById('menuNews').addEventListener('click',()=>{closeMenu();document.getElementById('newsSection').scrollIntoView({behavior:'smooth',block:'start'});}); const studentsOverlay=document.getElementById('studentsOverlay'); document.getElementById('menuStudents').addEventListener('click',()=>{closeMenu();studentsOverlay.classList.add('show');}); document.getElementById('studentsClose').addEventListener('click',()=>studentsOverlay.classList.remove('show')); studentsOverlay.addEventListener('click',e=>{if(e.target===studentsOverlay)studentsOverlay.classList.remove('show')}); const messagesOverlay=document.getElementById('messagesOverlay'); document.getElementById('msgBtn').addEventListener('click',()=>{closeMenu();closeAcct();messagesOverlay.classList.add('show');markMessagesRead();}); document.getElementById('messagesClose').addEventListener('click',()=>messagesOverlay.classList.remove('show')); messagesOverlay.addEventListener('click',e=>{if(e.target===messagesOverlay)messagesOverlay.classList.remove('show')}); document.getElementById('menuAdmin').addEventListener('click',()=>{closeMenu();document.getElementById('adminSection').scrollIntoView({behavior:'smooth',block:'start'});}); document.getElementById('menuLeaveClass').addEventListener('click',leaveClass); document.getElementById('refreshClassesBtn').addEventListener('click',listAllClasses); document.getElementById('deleteAllClassesBtn').addEventListener('click',deleteAllClassesData); $('messageForm').onsubmit=async e=>{e.preventDefault();await sendPrivateMessage($('messageInput').value)}; async function init(){ renderAccount(); await loadUsers(); await loadNews(); await loadMessages(); meId=await sGet('currentUserId',false); renderAll(); journal(); if(location.hash){ document.querySelector(location.hash)?.scrollIntoView({behavior:'smooth',block:'start'}); } } init(); setInterval(async()=>{ await loadUsers(); await loadNews(); await loadMessages(); renderAll(); await refreshJournalQuiet(); },4000);</script></body></html>
